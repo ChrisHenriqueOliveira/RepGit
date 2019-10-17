@@ -35,9 +35,11 @@
             this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pnlInitialScreen = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
+            this.picFingerPrint = new System.Windows.Forms.PictureBox();
             this.pnlRegistered = new System.Windows.Forms.Panel();
             this.btnBack = new MaterialSkin.Controls.MaterialFlatButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.btnUsersScreen = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblLoggedAs = new System.Windows.Forms.Label();
@@ -46,19 +48,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlUsers = new System.Windows.Forms.Panel();
             this.lblUsersTitle = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picFingerPrint = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.pnlInitialScreen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).BeginInit();
             this.pnlRegistered.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlHome.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnlUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -85,12 +86,12 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Depth = 0;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTitle.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblTitle.Location = new System.Drawing.Point(189, 24);
             this.lblTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(54, 18);
+            this.lblTitle.Size = new System.Drawing.Size(52, 19);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "LOGIN";
             // 
@@ -132,9 +133,9 @@
             this.pnlInitialScreen.Controls.Add(this.btnLogin);
             this.pnlInitialScreen.Controls.Add(this.txtID);
             this.pnlInitialScreen.Controls.Add(this.picFingerPrint);
-            this.pnlInitialScreen.Location = new System.Drawing.Point(1, 63);
+            this.pnlInitialScreen.Location = new System.Drawing.Point(0, 62);
             this.pnlInitialScreen.Name = "pnlInitialScreen";
-            this.pnlInitialScreen.Size = new System.Drawing.Size(431, 500);
+            this.pnlInitialScreen.Size = new System.Drawing.Size(430, 500);
             this.pnlInitialScreen.TabIndex = 8;
             // 
             // lblError
@@ -149,14 +150,26 @@
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblError.Visible = false;
             // 
+            // picFingerPrint
+            // 
+            this.picFingerPrint.Image = global::DataGridViewButtonExample.Properties.Resources._1234561;
+            this.picFingerPrint.InitialImage = null;
+            this.picFingerPrint.Location = new System.Drawing.Point(140, 147);
+            this.picFingerPrint.Name = "picFingerPrint";
+            this.picFingerPrint.Size = new System.Drawing.Size(150, 150);
+            this.picFingerPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFingerPrint.TabIndex = 3;
+            this.picFingerPrint.TabStop = false;
+            this.picFingerPrint.Click += new System.EventHandler(this.selectImage);
+            // 
             // pnlRegistered
             // 
             this.pnlRegistered.Controls.Add(this.btnBack);
             this.pnlRegistered.Controls.Add(this.label1);
             this.pnlRegistered.Controls.Add(this.pictureBox1);
-            this.pnlRegistered.Location = new System.Drawing.Point(1, 63);
+            this.pnlRegistered.Location = new System.Drawing.Point(0, 62);
             this.pnlRegistered.Name = "pnlRegistered";
-            this.pnlRegistered.Size = new System.Drawing.Size(431, 500);
+            this.pnlRegistered.Size = new System.Drawing.Size(430, 500);
             this.pnlRegistered.TabIndex = 11;
             this.pnlRegistered.Visible = false;
             // 
@@ -187,12 +200,23 @@
             this.label1.Text = "successfully registered";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DataGridViewButtonExample.Properties.Resources.correctVector;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(175, 157);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnlHome
             // 
             this.pnlHome.Controls.Add(this.btnUsersScreen);
             this.pnlHome.Controls.Add(this.lblLoggedAs);
             this.pnlHome.Controls.Add(this.lblHomeTitle);
-            this.pnlHome.Location = new System.Drawing.Point(1, 63);
+            this.pnlHome.Location = new System.Drawing.Point(0, 62);
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(430, 500);
             this.pnlHome.TabIndex = 12;
@@ -277,30 +301,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "User code: 456558";
             // 
-            // pnlUsers
-            // 
-            this.pnlUsers.AutoScroll = true;
-            this.pnlUsers.Controls.Add(this.lblUsersTitle);
-            this.pnlUsers.Controls.Add(this.panel1);
-            this.pnlUsers.Location = new System.Drawing.Point(0, 64);
-            this.pnlUsers.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.pnlUsers.Name = "pnlUsers";
-            this.pnlUsers.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.pnlUsers.Size = new System.Drawing.Size(437, 500);
-            this.pnlUsers.TabIndex = 13;
-            this.pnlUsers.Visible = false;
-            // 
-            // lblUsersTitle
-            // 
-            this.lblUsersTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblUsersTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblUsersTitle.Location = new System.Drawing.Point(13, 11);
-            this.lblUsersTitle.Name = "lblUsersTitle";
-            this.lblUsersTitle.Size = new System.Drawing.Size(404, 32);
-            this.lblUsersTitle.TabIndex = 10;
-            this.lblUsersTitle.Text = "USERS";
-            this.lblUsersTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DataGridViewButtonExample.Properties.Resources._200_2008697_account_customer_login_man_user_icon_login_icon;
@@ -311,51 +311,70 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // picFingerPrint
+            // pnlUsers
             // 
-            this.picFingerPrint.Image = global::DataGridViewButtonExample.Properties.Resources._1234561;
-            this.picFingerPrint.InitialImage = null;
-            this.picFingerPrint.Location = new System.Drawing.Point(140, 147);
-            this.picFingerPrint.Name = "picFingerPrint";
-            this.picFingerPrint.Size = new System.Drawing.Size(150, 150);
-            this.picFingerPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFingerPrint.TabIndex = 3;
-            this.picFingerPrint.TabStop = false;
-            this.picFingerPrint.Click += new System.EventHandler(this.selectImage);
+            this.pnlUsers.AutoScroll = true;
+            this.pnlUsers.Controls.Add(this.materialFlatButton1);
+            this.pnlUsers.Controls.Add(this.lblUsersTitle);
+            this.pnlUsers.Controls.Add(this.panel1);
+            this.pnlUsers.Location = new System.Drawing.Point(0, 62);
+            this.pnlUsers.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.pnlUsers.Name = "pnlUsers";
+            this.pnlUsers.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.pnlUsers.Size = new System.Drawing.Size(430, 500);
+            this.pnlUsers.TabIndex = 13;
+            this.pnlUsers.Visible = false;
             // 
-            // pictureBox1
+            // lblUsersTitle
             // 
-            this.pictureBox1.Image = global::DataGridViewButtonExample.Properties.Resources.correctVector;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(175, 157);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.lblUsersTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblUsersTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblUsersTitle.Location = new System.Drawing.Point(150, 9);
+            this.lblUsersTitle.Name = "lblUsersTitle";
+            this.lblUsersTitle.Size = new System.Drawing.Size(130, 32);
+            this.lblUsersTitle.TabIndex = 10;
+            this.lblUsersTitle.Text = "USERS";
+            this.lblUsersTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(19, 9);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(65, 36);
+            this.materialFlatButton1.TabIndex = 13;
+            this.materialFlatButton1.Text = "<< back";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 563);
+            this.ClientSize = new System.Drawing.Size(430, 563);
+            this.Controls.Add(this.pnlUsers);
             this.Controls.Add(this.pnlInitialScreen);
             this.Controls.Add(this.pnlRegistered);
             this.Controls.Add(this.pnlHome);
-            this.Controls.Add(this.pnlUsers);
             this.Name = "Form1";
             this.Text = "APS System";
             this.pnlInitialScreen.ResumeLayout(false);
             this.pnlInitialScreen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).EndInit();
             this.pnlRegistered.ResumeLayout(false);
             this.pnlRegistered.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHome.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlUsers.ResumeLayout(false);
+            this.pnlUsers.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -384,5 +403,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pnlUsers;
         private System.Windows.Forms.Label lblUsersTitle;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
     }
 }

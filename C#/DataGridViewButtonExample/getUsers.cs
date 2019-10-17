@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APS20192;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,16 +23,16 @@ namespace DataGridViewButtonExample
                 string fullName = files.Name;
                 string codeName = fullName.Substring(0, 6);
 
-                usersRegistered.Add(codeName);              
+                usersRegistered.Add(fullName);              
             }
             return usersRegistered;
         }
 
-        public Panel buildPanel(string users, int i)
+        public Panel buildPanel(string users, int i, panelContent panelContent, userInfo userInfo)
         {
             Panel pnlUser = new Panel();
             pnlUser.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            pnlUser.Location = new System.Drawing.Point(10, 44+i);
+            pnlUser.Location = new System.Drawing.Point(10, 44 + i);
             pnlUser.Name = "pnlUser" + users;
             pnlUser.Size = new System.Drawing.Size(390, 64);
             pnlUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
@@ -52,7 +53,7 @@ namespace DataGridViewButtonExample
             lblUserCode.Location = new System.Drawing.Point(67, 7);
             lblUserCode.Name = "lblUserCode" + users;
             lblUserCode.Size = new System.Drawing.Size(136, 16);
-            lblUserCode.Text = "User code: 456558";
+            lblUserCode.Text = users.Substring(0, users.Length - 5);
 
             Label lblUserAccess = new Label();
             lblUserAccess.AutoSize = true;
@@ -60,20 +61,34 @@ namespace DataGridViewButtonExample
             lblUserAccess.Location = new System.Drawing.Point(67, 40);
             lblUserAccess.Name = "lblUserAccess" + users;
             lblUserAccess.Size = new System.Drawing.Size(190, 16);
-            lblUserAccess.Text = "Access level: 1 (MASTER)";
+            lblUserAccess.Text = "Access level: " + users.Substring(6, users.Length - 10);
 
             Button btnEdit = new Button();
             btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnEdit.Location = new System.Drawing.Point(290, 33);
-            btnEdit.Name = "butEdit" + users;
+            btnEdit.Name = "btnEdit" + users;
             btnEdit.Size = new System.Drawing.Size(75, 23);
             btnEdit.Text = "EDIT";
             btnEdit.UseVisualStyleBackColor = true;
 
-            pnlUser.Controls.Add(picUser);
-            pnlUser.Controls.Add(lblUserCode);
-            pnlUser.Controls.Add(lblUserAccess);
-            pnlUser.Controls.Add(btnEdit);
+            if (userInfo.Code == users.Substring(0, users.Length - 5))
+            {
+                lblUserCode.Text += " (YOU)";
+                pnlUser.BackColor = System.Drawing.Color.Lime;
+                btnEdit.Enabled = false;
+
+            }
+
+            panelContent.PnlUser = pnlUser;
+            panelContent.PicUser = picUser;
+            panelContent.LblUserCode = lblUserCode;
+            panelContent.LblUserAccess = lblUserAccess;
+            panelContent.BtnEdit = btnEdit;
+
+            panelContent.PnlUser.Controls.Add(panelContent.PicUser);
+            panelContent.PnlUser.Controls.Add(panelContent.LblUserCode);
+            panelContent.PnlUser.Controls.Add(panelContent.LblUserAccess);
+            panelContent.PnlUser.Controls.Add(panelContent.BtnEdit);
 
             return pnlUser;
         }

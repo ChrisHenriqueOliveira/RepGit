@@ -17,7 +17,8 @@ namespace APS20192
     public partial class Form1 : MaterialSkin.Controls.MaterialForm
     {
 
-        userInfo userInfo;
+        userInfo userInfo = new userInfo();
+        panelContent panelContent = new panelContent();
         bool imageChoosed = false;
         public Form1()
         {
@@ -31,7 +32,6 @@ namespace APS20192
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE
             );
-            userInfo = new userInfo();
         }
 
         private void selectImage(object sender, EventArgs e)
@@ -70,12 +70,12 @@ namespace APS20192
                 loginLocalizer localizer = new loginLocalizer();
                 string foundLogin = localizer.localizer(userInfo);
 
-                if(foundLogin != "")
+                if (foundLogin != "")
                 {
                     imageCompare compare = new imageCompare();
                     float hitPercent = compare.compareImages(foundLogin, userInfo.FileName);
 
-                    if(hitPercent >= 98)
+                    if (hitPercent >= 98)
                     {
                         lblError.Visible = false;
                         pnlInitialScreen.Visible = false;
@@ -85,11 +85,11 @@ namespace APS20192
                     }
                     else
                     {
-                        lblError.Text = "the fingerprints don't match";
+                        lblError.Text = "the fingerprints doesn't match";
                         lblError.Visible = true;
                     }
                 }
-                else 
+                else
                 {
                     lblError.Text = "digital or user not found";
                     lblError.Visible = true;
@@ -102,6 +102,7 @@ namespace APS20192
                 lblError.Visible = true;
             }
         }
+
         public void registerAction()
         {
             if (txtID.Text != "" && txtID.TextLength == 6 && imageChoosed)
@@ -176,6 +177,45 @@ namespace APS20192
 
         private void btnUsersClick(object sender, EventArgs e)
         {
+            loadPnlUsers();
+        }
+
+        private void btnEditUserClick(object sender, EventArgs e)
+        {
+            Button edit = (Button)sender;
+            string userCode = edit.Name.Substring(7, edit.Name.Length - 11);
+            string userAccess = edit.Name.Substring(13, edit.Name.Length - 17);
+
+            formEditRegister editRegister = new formEditRegister();
+            editRegister.editRegister(userCode, userAccess);
+
+            editRegister.Show();
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            cleanPnlUsers();
+        }
+
+        private void cleanPnlUsers()
+        {
+            int controlsCount = pnlUsers.Controls.Count;
+
+            for (int i = 0; i < controlsCount; i++)
+            {
+                foreach (Control item in pnlUsers.Controls)
+                {
+                    if (item is Panel)
+                        pnlUsers.Controls.Remove(item);
+                }
+            }
+
+            pnlHome.Visible = true;
+            pnlUsers.Visible = false;
+        }
+
+        private void loadPnlUsers()
+        {
             int i = 0;
             pnlUsers.Visible = true;
             pnlHome.Visible = false;
@@ -183,14 +223,13 @@ namespace APS20192
             getUsers getUsers = new getUsers();
             List<string> usersRegistered = getUsers.getUsersRegistered();
 
-             foreach (string users in usersRegistered)
+            foreach (string users in usersRegistered)
             {
-                Panel user = getUsers.buildPanel(users, i+20);
-                pnlUsers.Controls.Add(user);
+                Panel user = getUsers.buildPanel(users, i + 20, panelContent, userInfo);
+                panelContent.BtnEdit.Click += new System.EventHandler(this.btnEditUserClick);
+                pnlUsers.Controls.Add(panelContent.PnlUser);
                 i += 70;
             }
-            
-
         }
     }
 }
