@@ -9,6 +9,9 @@ namespace DataGridViewButtonExample
 {
     public class imageCompare
     {
+        private bool finishedCompare = false;
+
+        public bool FinishedCompare { get => finishedCompare; set => finishedCompare = value; }
 
         static Bitmap reduceImage(Bitmap image, int width, int height)
         {
@@ -91,6 +94,7 @@ namespace DataGridViewButtonExample
             float _decimal = pixelsEqualQtt / area;
             float hitPercent = _decimal * 100;
 
+            finishedCompare = true;
             return hitPercent;
         }
 

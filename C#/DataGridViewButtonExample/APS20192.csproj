@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Information\ReadMe.txt" />
+    <None Include="Resources\loading1.gif" />
     <None Include="Resources\200-2008697_account-customer-login-man-user-icon-login-icon.png" />
     <None Include="Resources\correctVector.png" />
     <None Include="Resources\1234561.png" />

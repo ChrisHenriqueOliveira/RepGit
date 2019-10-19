@@ -12,6 +12,10 @@ namespace DataGridViewButtonExample
     public class getUsers
     {
         List<string> usersRegistered = new List<string>();
+        private bool userChanged = false;
+
+        public bool UserChanged { get => userChanged; set => userChanged = value; }
+
         public List<string> getUsersRegistered()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage";

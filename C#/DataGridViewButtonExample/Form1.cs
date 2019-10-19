@@ -19,7 +19,14 @@ namespace APS20192
 
         userInfo userInfo = new userInfo();
         panelContent panelContent = new panelContent();
+        getUsers getUsers = new getUsers();
+        imageCompare imageCompare = new imageCompare();
+
+        string foundLogin;
+        float hitPercent;
         bool imageChoosed = false;
+
+        Thread imageComp;
         public Form1()
         {
             InitializeComponent();
@@ -68,26 +75,19 @@ namespace APS20192
                 userInfo.Code = txtID.Text;
 
                 loginLocalizer localizer = new loginLocalizer();
-                string foundLogin = localizer.localizer(userInfo);
+                foundLogin = localizer.localizer(userInfo);
 
                 if (foundLogin != "")
                 {
-                    imageCompare compare = new imageCompare();
-                    float hitPercent = compare.compareImages(foundLogin, userInfo.FileName);
+                    
+                    imageComp = new Thread(imageComparision);
+                    imageComp.Start();
 
-                    if (hitPercent >= 98)
-                    {
-                        lblError.Visible = false;
-                        pnlInitialScreen.Visible = false;
-                        pnlHome.Visible = true;
+                    timer2.Start();
 
-                        logged();
-                    }
-                    else
-                    {
-                        lblError.Text = "the fingerprints doesn't match";
-                        lblError.Visible = true;
-                    }
+                    pnlInitialScreen.Visible = false;
+                    pnlHome.Visible = false;
+                    pnlLoading.Visible = true;
                 }
                 else
                 {
@@ -101,6 +101,11 @@ namespace APS20192
                 lblError.Text = "fill everything correctly";
                 lblError.Visible = true;
             }
+        }
+
+        private void imageComparision()
+        {
+            hitPercent = imageCompare.compareImages(foundLogin, userInfo.FileName);
         }
 
         public void registerAction()
@@ -187,7 +192,9 @@ namespace APS20192
             string userAccess = edit.Name.Substring(13, edit.Name.Length - 17);
 
             formEditRegister editRegister = new formEditRegister();
-            editRegister.editRegister(userCode, userAccess);
+            editRegister.editRegister(userCode, userAccess, getUsers);
+
+            timer1.Start();
 
             editRegister.Show();
         }
@@ -229,6 +236,55 @@ namespace APS20192
                 panelContent.BtnEdit.Click += new System.EventHandler(this.btnEditUserClick);
                 pnlUsers.Controls.Add(panelContent.PnlUser);
                 i += 70;
+            }
+        }
+
+        private void verifyUsersChanges(object sender, EventArgs e)
+        {
+            if (getUsers.UserChanged == true)
+            {
+                cleanPnlUsers();
+                loadPnlUsers();
+                getUsers.UserChanged = false;
+                timer1.Stop();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void verifyLoginSuccess(object sender, EventArgs e)
+        {
+            if(imageCompare.FinishedCompare == true)
+            {
+                timer2.Stop();
+                imageComp.Abort();
+                ifLogged();
+                imageCompare.FinishedCompare = false;
+            }
+            else
+            {
+
+            }
+        }
+
+        public void ifLogged()
+        {
+            if (hitPercent >= 98)
+            {
+                lblError.Visible = false;
+                pnlLoading.Visible = false;
+                pnlHome.Visible = true;
+
+                logged();
+            }
+            else
+            {
+                pnlLoading.Visible = false;
+                pnlInitialScreen.Visible = true;
+                lblError.Text = "the fingerprints doesn't match";
+                lblError.Visible = true;
             }
         }
     }

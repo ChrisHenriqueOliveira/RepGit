@@ -14,6 +14,8 @@ namespace DataGridViewButtonExample
 {
     public partial class formEditRegister : MaterialSkin.Controls.MaterialForm
     {
+
+        getUsers getUsers;
         public formEditRegister()
         {
             InitializeComponent();
@@ -28,10 +30,11 @@ namespace DataGridViewButtonExample
                 );
         }
 
-        public void editRegister(string user, string access)
+        public void editRegister(string user, string access, getUsers getUsersClass)
         {
             lblUserCode.Text = user.Substring(0,user.Length-1);
             lblOldAccess.Text = access;
+            getUsers = getUsersClass;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -46,7 +49,12 @@ namespace DataGridViewButtonExample
                 string OldName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage\\" + lblUserCode.Text + lblOldAccess.Text + ".png";
                 string NewName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage\\" + lblUserCode.Text + cbNewAccess.SelectedItem + ".png";
                 System.IO.File.Move(OldName, NewName);
+                getUsers.UserChanged = true;
+
+                pnlChange.Visible = false;
                 pnlEdited.Visible = true;
+
+                this.Dispose();
             }
         }
 

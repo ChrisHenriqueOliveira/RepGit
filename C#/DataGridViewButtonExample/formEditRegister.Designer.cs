@@ -35,13 +35,13 @@
             this.lblNewAccess = new MaterialSkin.Controls.MaterialLabel();
             this.cbNewAccess = new System.Windows.Forms.ComboBox();
             this.btnCancel = new MaterialSkin.Controls.MaterialFlatButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSave = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pnlChange = new System.Windows.Forms.Panel();
             this.pnlEdited = new System.Windows.Forms.Panel();
             this.btnBack = new MaterialSkin.Controls.MaterialFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.btnSave = new MaterialSkin.Controls.MaterialFlatButton();
+            this.pnlChange.SuspendLayout();
             this.pnlEdited.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -155,37 +155,21 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // panel1
+            // pnlChange
             // 
-            this.panel1.Controls.Add(this.pnlEdited);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.lblTitleUserCode);
-            this.panel1.Controls.Add(this.cbNewAccess);
-            this.panel1.Controls.Add(this.lblTitleOldAccess);
-            this.panel1.Controls.Add(this.lblNewAccess);
-            this.panel1.Controls.Add(this.lblUserCode);
-            this.panel1.Controls.Add(this.lblOldAccess);
-            this.panel1.Location = new System.Drawing.Point(0, 63);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 168);
-            this.panel1.TabIndex = 7;
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoSize = true;
-            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.Depth = 0;
-            this.btnSave.Location = new System.Drawing.Point(367, 100);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Primary = false;
-            this.btnSave.Size = new System.Drawing.Size(46, 36);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.pnlChange.Controls.Add(this.btnSave);
+            this.pnlChange.Controls.Add(this.pnlEdited);
+            this.pnlChange.Controls.Add(this.btnCancel);
+            this.pnlChange.Controls.Add(this.lblTitleUserCode);
+            this.pnlChange.Controls.Add(this.cbNewAccess);
+            this.pnlChange.Controls.Add(this.lblTitleOldAccess);
+            this.pnlChange.Controls.Add(this.lblNewAccess);
+            this.pnlChange.Controls.Add(this.lblUserCode);
+            this.pnlChange.Controls.Add(this.lblOldAccess);
+            this.pnlChange.Location = new System.Drawing.Point(0, 63);
+            this.pnlChange.Name = "pnlChange";
+            this.pnlChange.Size = new System.Drawing.Size(430, 168);
+            this.pnlChange.TabIndex = 7;
             // 
             // pnlEdited
             // 
@@ -236,16 +220,32 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = true;
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSave.Depth = 0;
+            this.btnSave.Location = new System.Drawing.Point(367, 100);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Primary = false;
+            this.btnSave.Size = new System.Drawing.Size(46, 36);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // formEditRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 231);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlChange);
             this.Name = "formEditRegister";
             this.Text = "Register Edit";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlChange.ResumeLayout(false);
+            this.pnlChange.PerformLayout();
             this.pnlEdited.ResumeLayout(false);
             this.pnlEdited.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -262,7 +262,7 @@
         private MaterialSkin.Controls.MaterialLabel lblNewAccess;
         private System.Windows.Forms.ComboBox cbNewAccess;
         private MaterialSkin.Controls.MaterialFlatButton btnCancel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlChange;
         private MaterialSkin.Controls.MaterialFlatButton btnSave;
         private System.Windows.Forms.Panel pnlEdited;
         private MaterialSkin.Controls.MaterialFlatButton btnBack;
