@@ -191,12 +191,20 @@ namespace APS20192
             string userCode = edit.Name.Substring(7, edit.Name.Length - 11);
             string userAccess = edit.Name.Substring(13, edit.Name.Length - 17);
 
-            formEditRegister editRegister = new formEditRegister();
-            editRegister.editRegister(userCode, userAccess, getUsers);
+            if(Convert.ToInt32(userInfo.AccessLevel) > Convert.ToInt32(userAccess))
+            {
+                formEditRegister editRegister = new formEditRegister();
+                editRegister.editRegister(userCode, userAccess, getUsers, userInfo);
 
-            timer1.Start();
+                timer1.Start();
 
-            editRegister.Show();
+                editRegister.Show();
+            }
+            else
+            {
+                MessageBox.Show("You can not change the information of a user who has more access level than you!", "ERROR!");
+            }
+          
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)

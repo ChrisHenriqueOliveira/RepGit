@@ -28,6 +28,7 @@ namespace DataGridViewButtonExample
 
                     if (codeName == userInfo.Code)
                     {
+                        userInfo.AccessLevel = fullName.Substring(6, 1);
                         return fullPath;
                     }
                 }

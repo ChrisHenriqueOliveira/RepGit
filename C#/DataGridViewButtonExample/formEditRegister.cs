@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using APS20192;
+using MaterialSkin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace DataGridViewButtonExample
     {
 
         getUsers getUsers;
+        userInfo userInfo;
         public formEditRegister()
         {
             InitializeComponent();
@@ -30,11 +32,13 @@ namespace DataGridViewButtonExample
                 );
         }
 
-        public void editRegister(string user, string access, getUsers getUsersClass)
+        public void editRegister(string user, string access, getUsers getUsersClass, userInfo userInfoClass)
         {
             lblUserCode.Text = user.Substring(0,user.Length-1);
             lblOldAccess.Text = access;
+
             getUsers = getUsersClass;
+            userInfo = userInfoClass;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -46,15 +50,22 @@ namespace DataGridViewButtonExample
         {
             if (cbNewAccess.Items.Contains(cbNewAccess.Text))
             {
-                string OldName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage\\" + lblUserCode.Text + lblOldAccess.Text + ".png";
-                string NewName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage\\" + lblUserCode.Text + cbNewAccess.SelectedItem + ".png";
-                System.IO.File.Move(OldName, NewName);
-                getUsers.UserChanged = true;
+                if(Convert.ToInt32(cbNewAccess.Text) > Convert.ToInt32(userInfo.AccessLevel))
+                {
+                    MessageBox.Show("You cannot change to a higher access level than yours!", "ERROR!");
+                }
+                else
+                {
+                    string OldName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage\\" + lblUserCode.Text + lblOldAccess.Text + ".png";
+                    string NewName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\apsImage\\" + lblUserCode.Text + cbNewAccess.SelectedItem + ".png";
+                    System.IO.File.Move(OldName, NewName);
+                    getUsers.UserChanged = true;
 
-                pnlChange.Visible = false;
-                pnlEdited.Visible = true;
+                    pnlChange.Visible = false;
+                    pnlEdited.Visible = true;
 
-                this.Dispose();
+                    this.Dispose();
+                }               
             }
         }
 
