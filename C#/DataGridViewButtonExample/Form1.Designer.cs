@@ -57,6 +57,15 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.pnlLoading = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.pnlInitialScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).BeginInit();
             this.pnlRegistered.SuspendLayout();
@@ -220,6 +229,15 @@
             // 
             // pnlHome
             // 
+            this.pnlHome.Controls.Add(this.materialLabel1);
+            this.pnlHome.Controls.Add(this.label5);
+            this.pnlHome.Controls.Add(this.label4);
+            this.pnlHome.Controls.Add(this.materialRaisedButton4);
+            this.pnlHome.Controls.Add(this.materialRaisedButton3);
+            this.pnlHome.Controls.Add(this.materialRaisedButton2);
+            this.pnlHome.Controls.Add(this.materialDivider1);
+            this.pnlHome.Controls.Add(this.materialRaisedButton1);
+            this.pnlHome.Controls.Add(this.btnLogout);
             this.pnlHome.Controls.Add(this.btnUsersScreen);
             this.pnlHome.Controls.Add(this.lblLoggedAs);
             this.pnlHome.Controls.Add(this.lblHomeTitle);
@@ -228,17 +246,18 @@
             this.pnlHome.Size = new System.Drawing.Size(430, 500);
             this.pnlHome.TabIndex = 12;
             this.pnlHome.Visible = false;
+            this.pnlHome.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHome_Paint);
             // 
             // btnUsersScreen
             // 
             this.btnUsersScreen.Depth = 0;
-            this.btnUsersScreen.Location = new System.Drawing.Point(135, 89);
+            this.btnUsersScreen.Location = new System.Drawing.Point(135, 356);
             this.btnUsersScreen.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUsersScreen.Name = "btnUsersScreen";
             this.btnUsersScreen.Primary = true;
             this.btnUsersScreen.Size = new System.Drawing.Size(160, 36);
             this.btnUsersScreen.TabIndex = 11;
-            this.btnUsersScreen.Text = "USERS";
+            this.btnUsersScreen.Text = "REQUEST ACCESS";
             this.btnUsersScreen.UseVisualStyleBackColor = true;
             this.btnUsersScreen.Click += new System.EventHandler(this.btnUsersClick);
             // 
@@ -389,18 +408,131 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.AutoSize = true;
+            this.btnLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogout.Depth = 0;
+            this.btnLogout.Location = new System.Drawing.Point(18, 9);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLogout.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Primary = false;
+            this.btnLogout.Size = new System.Drawing.Size(82, 36);
+            this.btnLogout.TabIndex = 12;
+            this.btnLogout.Text = "<< Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(135, 120);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(160, 36);
+            this.materialRaisedButton1.TabIndex = 13;
+            this.materialRaisedButton1.Text = "LEVEL 1";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(50, 69);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(330, 1);
+            this.materialDivider1.TabIndex = 14;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(135, 306);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(160, 36);
+            this.materialRaisedButton2.TabIndex = 15;
+            this.materialRaisedButton2.Text = "USERS";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(135, 220);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(160, 36);
+            this.materialRaisedButton3.TabIndex = 16;
+            this.materialRaisedButton3.Text = "LEVEL 3";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
+            // 
+            // materialRaisedButton4
+            // 
+            this.materialRaisedButton4.Depth = 0;
+            this.materialRaisedButton4.Location = new System.Drawing.Point(135, 170);
+            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton4.Name = "materialRaisedButton4";
+            this.materialRaisedButton4.Primary = true;
+            this.materialRaisedButton4.Size = new System.Drawing.Size(160, 36);
+            this.materialRaisedButton4.TabIndex = 17;
+            this.materialRaisedButton4.Text = "LEVEL 2";
+            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Location = new System.Drawing.Point(13, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(404, 32);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Information Access";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Location = new System.Drawing.Point(13, 265);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(404, 32);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "System Configuration";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(116, 470);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(198, 19);
+            this.materialLabel1.TabIndex = 20;
+            this.materialLabel1.Text = "Developed by UNIP Systems";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 563);
-            this.Controls.Add(this.pnlUsers);
             this.Controls.Add(this.pnlInitialScreen);
             this.Controls.Add(this.pnlLoading);
             this.Controls.Add(this.pnlRegistered);
             this.Controls.Add(this.pnlHome);
+            this.Controls.Add(this.pnlUsers);
             this.Name = "Form1";
-            this.Text = "APS System";
+            this.Text = "UNIP Systems - Main";
             this.pnlInitialScreen.ResumeLayout(false);
             this.pnlInitialScreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).EndInit();
@@ -408,6 +540,7 @@
             this.pnlRegistered.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHome.ResumeLayout(false);
+            this.pnlHome.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -448,5 +581,14 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Panel pnlLoading;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private MaterialSkin.Controls.MaterialFlatButton btnLogout;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
     }
 }

@@ -295,5 +295,54 @@ namespace APS20192
                 lblError.Visible = true;
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            pnlHome.Visible = false;
+            pnlInitialScreen.Visible = true;
+
+            userInfo.cleanUserInfo();
+        }
+
+        private void pnlHome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(userInfo.AccessLevel) >= 1)
+            {
+                MessageBox.Show("Access ok");
+            }
+            else
+            {
+                MessageBox.Show("Access fail");
+            }
+        }
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(userInfo.AccessLevel) >= 2)
+            {
+                MessageBox.Show("Access ok");
+            }
+            else
+            {
+                MessageBox.Show("Access fail");
+            }
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(userInfo.AccessLevel) >= 3)
+            {
+                MessageBox.Show("Access ok");
+            }
+            else
+            {
+                MessageBox.Show("Access fail");
+            }
+        }
     }
 }

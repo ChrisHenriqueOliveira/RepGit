@@ -36,11 +36,11 @@
             this.cbNewAccess = new System.Windows.Forms.ComboBox();
             this.btnCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.pnlChange = new System.Windows.Forms.Panel();
+            this.btnSave = new MaterialSkin.Controls.MaterialFlatButton();
             this.pnlEdited = new System.Windows.Forms.Panel();
             this.btnBack = new MaterialSkin.Controls.MaterialFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSave = new MaterialSkin.Controls.MaterialFlatButton();
             this.pnlChange.SuspendLayout();
             this.pnlEdited.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -131,9 +131,7 @@
             this.cbNewAccess.Items.AddRange(new object[] {
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.cbNewAccess.Location = new System.Drawing.Point(202, 106);
             this.cbNewAccess.Name = "cbNewAccess";
             this.cbNewAccess.Size = new System.Drawing.Size(92, 21);
@@ -157,8 +155,8 @@
             // 
             // pnlChange
             // 
-            this.pnlChange.Controls.Add(this.btnSave);
             this.pnlChange.Controls.Add(this.pnlEdited);
+            this.pnlChange.Controls.Add(this.btnSave);
             this.pnlChange.Controls.Add(this.btnCancel);
             this.pnlChange.Controls.Add(this.lblTitleUserCode);
             this.pnlChange.Controls.Add(this.cbNewAccess);
@@ -170,6 +168,22 @@
             this.pnlChange.Name = "pnlChange";
             this.pnlChange.Size = new System.Drawing.Size(430, 168);
             this.pnlChange.TabIndex = 7;
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoSize = true;
+            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSave.Depth = 0;
+            this.btnSave.Location = new System.Drawing.Point(367, 100);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Primary = false;
+            this.btnSave.Size = new System.Drawing.Size(46, 36);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlEdited
             // 
@@ -220,22 +234,6 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSave
-            // 
-            this.btnSave.AutoSize = true;
-            this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.Depth = 0;
-            this.btnSave.Location = new System.Drawing.Point(367, 100);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSave.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Primary = false;
-            this.btnSave.Size = new System.Drawing.Size(46, 36);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // formEditRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +241,7 @@
             this.ClientSize = new System.Drawing.Size(430, 231);
             this.Controls.Add(this.pnlChange);
             this.Name = "formEditRegister";
-            this.Text = "Register Edit";
+            this.Text = "UNIP Systems - Register Edit";
             this.pnlChange.ResumeLayout(false);
             this.pnlChange.PerformLayout();
             this.pnlEdited.ResumeLayout(false);

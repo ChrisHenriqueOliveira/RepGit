@@ -18,5 +18,13 @@ namespace APS20192
         public string Code { get => code; set => code = value; }
         public string FileName { get => fileName; set => fileName = value; }
         public string AccessLevel { get => accessLevel; set => accessLevel = value; }
-    }
+
+        public void cleanUserInfo()
+        {
+            name = "";
+            code = "";
+            accessLevel = "";
+            fileName = "";
+        }
+    }   
 }
