@@ -79,7 +79,7 @@ namespace DataGridViewButtonExample
             {
                 lblUserCode.Text += " (YOU)";
                 pnlUser.BackColor = System.Drawing.Color.Lime;
-                btnEdit.Enabled = false;
+                btnEdit.Visible = false;
 
             }
 

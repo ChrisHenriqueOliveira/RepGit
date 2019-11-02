@@ -11,7 +11,11 @@ namespace DataGridViewButtonExample
     {
         private bool finishedCompare = false;
 
+        private string compareStatus;
+
         public bool FinishedCompare { get => finishedCompare; set => finishedCompare = value; }
+
+        public string CompareStatus { get => compareStatus; set => compareStatus = value; }
 
         static Bitmap reduceImage(Bitmap image, int width, int height)
         {
@@ -76,23 +80,37 @@ namespace DataGridViewButtonExample
 
         public float compareImages(string pathImage1, string pathImage2)
         {
+            compareStatus = "Generating Bitmaps...";
+
             Bitmap img1Bitmap = new Bitmap(pathImage1);
             Bitmap img2Bitmap = new Bitmap(pathImage2);
+
+            compareStatus = "Reducing Images...";
 
             Bitmap img1BitmapReduced = reduceImage(img1Bitmap, 1000, 1000);
             Bitmap img2BitmapReduced = reduceImage(img2Bitmap, 1000, 1000);
 
+            compareStatus = "Converting to Gray Scale...";
+
             Bitmap img1BitmapBxW = grayScale(img1BitmapReduced);
             Bitmap img2BitmapBxW = grayScale(img2BitmapReduced);
+
+            compareStatus = "Generating Hashes...";
 
             List<bool> image1Hash = generateHash(img1BitmapBxW);
             List<bool> image2Hash = generateHash(img2BitmapBxW);
 
+            compareStatus = "Comparing Pixels...";
+
             int pixelsEqualQtt = equalPixels(image1Hash, image2Hash);
+
+            compareStatus = "Getting Hit Percent...";
 
             float area = img1BitmapReduced.Width * img2BitmapReduced.Height;
             float _decimal = pixelsEqualQtt / area;
             float hitPercent = _decimal * 100;
+
+            compareStatus = "Finishing...";
 
             finishedCompare = true;
             return hitPercent;

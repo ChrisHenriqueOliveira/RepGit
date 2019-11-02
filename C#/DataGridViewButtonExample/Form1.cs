@@ -130,7 +130,7 @@ namespace APS20192
                     lblTitle.Text = "LOGIN";
                     btnLogin.Text = "LOGIN";
 
-                    registerFormButton.Text = "REGISTER";
+                    btnRegisterForm.Text = "REGISTER";
                 }
                 else
                 {
@@ -147,7 +147,7 @@ namespace APS20192
 
         private void btnRegisterClick(object sender, EventArgs e)
         {
-            if (registerFormButton.Text == "REGISTER")
+            if (btnRegisterForm.Text == "REGISTER")
             {
                 picFingerPrint.Image = DataGridViewButtonExample.Properties.Resources._1234561;
                 txtID.Clear();
@@ -155,7 +155,7 @@ namespace APS20192
                 lblTitle.Text = "REGISTER";
                 btnLogin.Text = "CONFIRM";
 
-                registerFormButton.Text = "CANCEL";
+                btnRegisterForm.Text = "CANCEL";
             }
             else
             {
@@ -165,7 +165,7 @@ namespace APS20192
                 lblTitle.Text = "LOGIN";
                 btnLogin.Text = "LOGIN";
 
-                registerFormButton.Text = "REGISTER";
+                btnRegisterForm.Text = "REGISTER";
             }
         }
 
@@ -264,6 +264,10 @@ namespace APS20192
 
         private void verifyLoginSuccess(object sender, EventArgs e)
         {
+            string compareStatus = imageCompare.CompareStatus;
+
+            lblCompareStatus.Text = compareStatus;
+
             if(imageCompare.FinishedCompare == true)
             {
                 timer2.Stop();
@@ -313,7 +317,8 @@ namespace APS20192
         {
             if(Convert.ToInt32(userInfo.AccessLevel) >= 1)
             {
-                MessageBox.Show("Access ok");
+                pnlLvl1Access.Visible = true;
+                pnlHome.Visible = false;
             }
             else
             {
@@ -325,7 +330,8 @@ namespace APS20192
         {
             if (Convert.ToInt32(userInfo.AccessLevel) >= 2)
             {
-                MessageBox.Show("Access ok");
+                pnlLvl2Access.Visible = true;
+                pnlHome.Visible = false;
             }
             else
             {
@@ -337,12 +343,37 @@ namespace APS20192
         {
             if (Convert.ToInt32(userInfo.AccessLevel) >= 3)
             {
-                MessageBox.Show("Access ok");
+                pnlLvl3Access.Visible = true;
+                pnlHome.Visible = false;
             }
             else
             {
                 MessageBox.Show("Access fail");
             }
+        }
+
+        private void btnBack3_Click(object sender, EventArgs e)
+        {
+            backToHome();
+        }
+
+        private void backToHome()
+        {
+            pnlLvl1Access.Visible = false;
+            pnlLvl2Access.Visible = false;
+            pnlLvl3Access.Visible = false;
+
+            pnlHome.Visible = true;
+        }
+
+        private void lblBack2_Click(object sender, EventArgs e)
+        {
+            backToHome();
+        }
+
+        private void btnBack1_Click(object sender, EventArgs e)
+        {
+            backToHome();
         }
     }
 }
