@@ -375,5 +375,41 @@ namespace APS20192
         {
             backToHome();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (panel2.Visible == true)
+            {
+                panel2.Visible = false;
+            }
+            else
+            {
+                panel2.Visible = true;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (panel3.Visible == true)
+            {
+                panel3.Visible = false;
+            }
+            else
+            {
+                panel3.Visible = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (panel4.Visible == true)
+            {
+                panel4.Visible = false;
+            }
+            else
+            {
+                panel4.Visible = true;
+            }
+        }
     }
 }

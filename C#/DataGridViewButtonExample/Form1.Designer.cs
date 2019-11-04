@@ -68,6 +68,11 @@
             this.lblCompareStatus = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pnlLvl1Access = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnBack1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.lblLvl1Title = new MaterialSkin.Controls.MaterialLabel();
             this.pnlLvl2Access = new System.Windows.Forms.Panel();
@@ -76,6 +81,22 @@
             this.pnlLvl3Access = new System.Windows.Forms.Panel();
             this.btnBack3 = new MaterialSkin.Controls.MaterialFlatButton();
             this.lblLevel3Title = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.pnlInitialScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFingerPrint)).BeginInit();
             this.pnlRegistered.SuspendLayout();
@@ -87,8 +108,11 @@
             this.pnlLoading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnlLvl1Access.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.pnlLvl2Access.SuspendLayout();
             this.pnlLvl3Access.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -549,13 +573,70 @@
             // 
             // pnlLvl1Access
             // 
+            this.pnlLvl1Access.Controls.Add(this.flowLayoutPanel1);
             this.pnlLvl1Access.Controls.Add(this.btnBack1);
             this.pnlLvl1Access.Controls.Add(this.lblLvl1Title);
             this.pnlLvl1Access.Location = new System.Drawing.Point(0, 62);
             this.pnlLvl1Access.Name = "pnlLvl1Access";
             this.pnlLvl1Access.Size = new System.Drawing.Size(430, 500);
             this.pnlLvl1Access.TabIndex = 13;
-            this.pnlLvl1Access.Visible = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.materialRaisedButton1);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.materialRaisedButton2);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.materialRaisedButton3);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 62);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(430, 438);
+            this.flowLayoutPanel1.TabIndex = 15;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(25, 3);
+            this.materialRaisedButton1.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton1.TabIndex = 17;
+            this.materialRaisedButton1.Text = "Blabla1";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(25, 32);
+            this.panel2.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(380, 200);
+            this.panel2.TabIndex = 3;
+            this.panel2.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(25, 267);
+            this.panel3.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(380, 200);
+            this.panel3.TabIndex = 5;
+            this.panel3.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(25, 502);
+            this.panel4.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(380, 200);
+            this.panel4.TabIndex = 7;
+            this.panel4.Visible = false;
             // 
             // btnBack1
             // 
@@ -588,6 +669,7 @@
             // 
             // pnlLvl2Access
             // 
+            this.pnlLvl2Access.Controls.Add(this.flowLayoutPanel2);
             this.pnlLvl2Access.Controls.Add(this.lblBack2);
             this.pnlLvl2Access.Controls.Add(this.lblLevel2Title);
             this.pnlLvl2Access.Location = new System.Drawing.Point(0, 62);
@@ -627,6 +709,7 @@
             // 
             // pnlLvl3Access
             // 
+            this.pnlLvl3Access.Controls.Add(this.flowLayoutPanel3);
             this.pnlLvl3Access.Controls.Add(this.btnBack3);
             this.pnlLvl3Access.Controls.Add(this.lblLevel3Title);
             this.pnlLvl3Access.Location = new System.Drawing.Point(0, 62);
@@ -664,19 +747,211 @@
             this.lblLevel3Title.Text = "LEVEL 3";
             this.lblLevel3Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(25, 238);
+            this.materialRaisedButton2.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton2.TabIndex = 18;
+            this.materialRaisedButton2.Text = "Blabla2";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(25, 473);
+            this.materialRaisedButton3.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton3.TabIndex = 19;
+            this.materialRaisedButton3.Text = "Blabla3";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.Controls.Add(this.materialRaisedButton4);
+            this.flowLayoutPanel2.Controls.Add(this.panel5);
+            this.flowLayoutPanel2.Controls.Add(this.materialRaisedButton5);
+            this.flowLayoutPanel2.Controls.Add(this.panel6);
+            this.flowLayoutPanel2.Controls.Add(this.materialRaisedButton6);
+            this.flowLayoutPanel2.Controls.Add(this.panel7);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 63);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(430, 438);
+            this.flowLayoutPanel2.TabIndex = 16;
+            this.flowLayoutPanel2.WrapContents = false;
+            // 
+            // materialRaisedButton4
+            // 
+            this.materialRaisedButton4.Depth = 0;
+            this.materialRaisedButton4.Location = new System.Drawing.Point(25, 3);
+            this.materialRaisedButton4.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton4.Name = "materialRaisedButton4";
+            this.materialRaisedButton4.Primary = true;
+            this.materialRaisedButton4.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton4.TabIndex = 17;
+            this.materialRaisedButton4.Text = "Blabla1";
+            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(25, 32);
+            this.panel5.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(380, 200);
+            this.panel5.TabIndex = 3;
+            this.panel5.Visible = false;
+            // 
+            // materialRaisedButton5
+            // 
+            this.materialRaisedButton5.Depth = 0;
+            this.materialRaisedButton5.Location = new System.Drawing.Point(25, 238);
+            this.materialRaisedButton5.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton5.Name = "materialRaisedButton5";
+            this.materialRaisedButton5.Primary = true;
+            this.materialRaisedButton5.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton5.TabIndex = 18;
+            this.materialRaisedButton5.Text = "Blabla2";
+            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(25, 267);
+            this.panel6.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(380, 200);
+            this.panel6.TabIndex = 5;
+            this.panel6.Visible = false;
+            // 
+            // materialRaisedButton6
+            // 
+            this.materialRaisedButton6.Depth = 0;
+            this.materialRaisedButton6.Location = new System.Drawing.Point(25, 473);
+            this.materialRaisedButton6.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton6.Name = "materialRaisedButton6";
+            this.materialRaisedButton6.Primary = true;
+            this.materialRaisedButton6.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton6.TabIndex = 19;
+            this.materialRaisedButton6.Text = "Blabla3";
+            this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(25, 502);
+            this.panel7.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(380, 200);
+            this.panel7.TabIndex = 7;
+            this.panel7.Visible = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoScroll = true;
+            this.flowLayoutPanel3.Controls.Add(this.materialRaisedButton7);
+            this.flowLayoutPanel3.Controls.Add(this.panel8);
+            this.flowLayoutPanel3.Controls.Add(this.materialRaisedButton8);
+            this.flowLayoutPanel3.Controls.Add(this.panel9);
+            this.flowLayoutPanel3.Controls.Add(this.materialRaisedButton9);
+            this.flowLayoutPanel3.Controls.Add(this.panel10);
+            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 63);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(430, 438);
+            this.flowLayoutPanel3.TabIndex = 16;
+            this.flowLayoutPanel3.WrapContents = false;
+            // 
+            // materialRaisedButton7
+            // 
+            this.materialRaisedButton7.Depth = 0;
+            this.materialRaisedButton7.Location = new System.Drawing.Point(25, 3);
+            this.materialRaisedButton7.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton7.Name = "materialRaisedButton7";
+            this.materialRaisedButton7.Primary = true;
+            this.materialRaisedButton7.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton7.TabIndex = 17;
+            this.materialRaisedButton7.Text = "Blabla1";
+            this.materialRaisedButton7.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(25, 32);
+            this.panel8.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(380, 200);
+            this.panel8.TabIndex = 3;
+            this.panel8.Visible = false;
+            // 
+            // materialRaisedButton8
+            // 
+            this.materialRaisedButton8.Depth = 0;
+            this.materialRaisedButton8.Location = new System.Drawing.Point(25, 238);
+            this.materialRaisedButton8.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton8.Name = "materialRaisedButton8";
+            this.materialRaisedButton8.Primary = true;
+            this.materialRaisedButton8.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton8.TabIndex = 18;
+            this.materialRaisedButton8.Text = "Blabla2";
+            this.materialRaisedButton8.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(25, 267);
+            this.panel9.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(380, 200);
+            this.panel9.TabIndex = 5;
+            this.panel9.Visible = false;
+            // 
+            // materialRaisedButton9
+            // 
+            this.materialRaisedButton9.Depth = 0;
+            this.materialRaisedButton9.Location = new System.Drawing.Point(25, 473);
+            this.materialRaisedButton9.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.materialRaisedButton9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton9.Name = "materialRaisedButton9";
+            this.materialRaisedButton9.Primary = true;
+            this.materialRaisedButton9.Size = new System.Drawing.Size(380, 23);
+            this.materialRaisedButton9.TabIndex = 19;
+            this.materialRaisedButton9.Text = "Blabla3";
+            this.materialRaisedButton9.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Location = new System.Drawing.Point(25, 502);
+            this.panel10.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(380, 200);
+            this.panel10.TabIndex = 7;
+            this.panel10.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 563);
-            this.Controls.Add(this.pnlUsers);
-            this.Controls.Add(this.pnlInitialScreen);
-            this.Controls.Add(this.pnlLvl2Access);
             this.Controls.Add(this.pnlLvl3Access);
             this.Controls.Add(this.pnlLvl1Access);
             this.Controls.Add(this.pnlLoading);
             this.Controls.Add(this.pnlRegistered);
             this.Controls.Add(this.pnlHome);
+            this.Controls.Add(this.pnlUsers);
+            this.Controls.Add(this.pnlInitialScreen);
+            this.Controls.Add(this.pnlLvl2Access);
             this.Name = "Form1";
             this.Text = "UNIP Systems - Main";
             this.pnlInitialScreen.ResumeLayout(false);
@@ -696,10 +971,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnlLvl1Access.ResumeLayout(false);
             this.pnlLvl1Access.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.pnlLvl2Access.ResumeLayout(false);
             this.pnlLvl2Access.PerformLayout();
             this.pnlLvl3Access.ResumeLayout(false);
             this.pnlLvl3Access.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -752,5 +1030,26 @@
         private System.Windows.Forms.Panel pnlLvl3Access;
         private MaterialSkin.Controls.MaterialFlatButton btnBack3;
         private MaterialSkin.Controls.MaterialLabel lblLevel3Title;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private System.Windows.Forms.Panel panel5;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
+        private System.Windows.Forms.Panel panel6;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
+        private System.Windows.Forms.Panel panel8;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
+        private System.Windows.Forms.Panel panel9;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton9;
+        private System.Windows.Forms.Panel panel10;
     }
 }
